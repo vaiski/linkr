@@ -26,4 +26,12 @@ abstract class ShortLinks extends ShortLinksSchema with RootConnector {
   def findById(id: String): Future[Option[ShortLink]] = {
     select.where(_.id eqs id).one()
   }
+
+  def store(entity: ShortLink): Future[ResultSet] = {
+    insert
+      .value(_.id, entity.id)
+      .value(_.url, entity.url)
+      .value(_.createdAt, entity.createdAt)
+      .future()
+  }
 }

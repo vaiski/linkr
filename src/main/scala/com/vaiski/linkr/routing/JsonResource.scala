@@ -29,6 +29,13 @@ trait JsonResource extends Directives with JsonSupport {
       }
     }
 
+  def completeWithLocationHeader[T](location: Future[String]): Route =
+    onSuccess(location) { url =>
+      respondWithHeader(Location(url)) {
+        complete(StatusCodes.MovedPermanently, None)
+      }
+    }
+
   def complete[T: ToResponseMarshaller](resource: Future[Option[T]]): Route =
     onSuccess(resource) {
       case Some(t) => complete(ToResponseMarshallable(t))

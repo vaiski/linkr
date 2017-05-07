@@ -15,7 +15,7 @@ resolvers ++= Seq(
 
 libraryDependencies ++= {
   val AkkaVersion       = "2.3.9"
-  val AkkaHttpVersion   = "10.0.5"
+  val AkkaHttpVersion   = "10.0.6"
   val Json4sVersion     = "3.5.1"
   val PhantomVersion    = "2.6.3"
   val PillarVersion     = "2.3.0"
@@ -23,13 +23,15 @@ libraryDependencies ++= {
   Seq(
     "com.typesafe.akka" %% "akka-slf4j"      % AkkaVersion,
     "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
+    "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion,
     "com.outworkers"    %% "phantom-dsl" % PhantomVersion,
     "com.chrisomeara"   %% "pillar" % PillarVersion,
     "com.snowplowanalytics"  %% "scala-maxmind-iplookups"  % "0.2.0",
     "ch.qos.logback"    %  "logback-classic" % "1.1.2",
     "org.json4s"        %% "json4s-native"   % Json4sVersion,
     "org.json4s"        %% "json4s-ext"      % Json4sVersion,
-    "de.heikoseeberger" %% "akka-http-json4s" % "1.14.0"
+    "de.heikoseeberger" %% "akka-http-json4s" % "1.14.0",
+    "joda-time"         % "joda-time" % "2.9.9"
   )
 }
 
