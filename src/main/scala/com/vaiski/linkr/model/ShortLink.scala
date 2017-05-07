@@ -5,10 +5,6 @@ import com.vaiski.linkr.entities.ShortLink
 
 import scala.concurrent.Future
 
-/**
-  * Created by vaiski on 8.4.2017.
-  */
-
 class ShortLinksSchema extends CassandraTable[ShortLinksSchema, ShortLink] {
 
   override lazy val tableName = "short_links"

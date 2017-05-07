@@ -4,10 +4,6 @@ import com.outworkers.phantom.dsl._
 
 import scala.concurrent.Future
 
-/**
-  * Created by vaiski on 16.4.2017.
-  */
-
 case class ShortLinkClick(linkId: String, timestamp: DateTime, countryCode: Option[String], ipAddress: Option[String])
 
 class ShortLinkClicksSchema extends CassandraTable[ShortLinkClicksSchema, ShortLinkClick] {

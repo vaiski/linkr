@@ -5,9 +5,6 @@ import com.vaiski.linkr.entities.ShortLink
 import com.vaiski.linkr.routing.JsonResource
 import com.vaiski.linkr.services.ShortLinkService
 
-/**
-  * Created by vaiski on 8.4.2017.
-  */
 trait ShortLinkResource extends JsonResource {
 
   def shortLinkRoutes: Route = pathPrefix("links") {

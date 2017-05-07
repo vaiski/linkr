@@ -7,10 +7,6 @@ import com.vaiski.linkr.model.{ShortLinkClicks, ShortLinks}
 
 import scala.concurrent.Future
 
-/**
-  * Created by vaiski on 8.4.2017.
-  */
-
 object ShortLinkService extends ShortLinkService(DefaultConnection.connector) {
   def getUrl(id: String): Future[String] = shortLinks.findById(id).map(sl => sl.get.url)
 }

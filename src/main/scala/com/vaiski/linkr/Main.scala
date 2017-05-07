@@ -6,13 +6,7 @@ import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import akka.util.Timeout
 import com.vaiski.linkr.common.utils.AppConfiguration
-import com.vaiski.linkr.services.ShortLinkService
 
-import scala.concurrent.Await
-
-/**
-  * Created by vaiski on 8.4.2017.
-  */
 object Main extends App with AppConfiguration with RestInterface {
   val host = config.getString("http.host")
   val port = config.getInt("http.port")

@@ -4,9 +4,6 @@ import de.heikoseeberger.akkahttpjson4s.Json4sSupport
 import org.json4s.ext.JodaTimeSerializers
 import org.json4s.{DefaultFormats, Formats, native}
 
-/**
-  * Created by vaiski on 8.4.2017.
-  */
 trait JsonSupport extends Json4sSupport {
 
   implicit val serialization = native.Serialization
